@@ -1,13 +1,186 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.swiper-button-disabled {
+  display: none !important;
+}
+
+.footer {
+  margin-top: 1.5em;
+  display: flex;
+  flex-direction: column;
+  padding: 2em 15%;
+  gap: 5px;
+}
+
+.footer-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+.footer-item a {
+  color: grey;
+}
+
+.service-code {
+  width: 150px;
+}
+
+.main-carousel__item {
+  /* padding-left: 3%;
+  padding-right: 3%; */
+  margin-top: 1em;
+  /* margin-right: 2; */
+}
+
+.profile-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3vw;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7em;
+  cursor: pointer;
+}
+
+.profile-container img {
+  width: 10vw;
+}
+
+.logo-Mmovies {
+  position: fixed;
+  top: 1%;
+  left: 5%;
+  width: 50px;
+}
+
+.videoWrapper {
+  margin-top: 1em;
+  width: 100vw;
+  height: calc(80vw / 1.77777778);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.no-video {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+  #navlink {
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 0.5em;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  #navlink .navlink-item {
+    display: none;
+  }
+}
+.navlink-item {
+  color: white;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.3em;
+}
+
+.navlink-item:hover {
+  background-color: #d27519;
+  border-radius: 10%;
+}
+
+/* For Desktop View */
+@media only screen and (min-width: 1024px) {
+  .container-data {
+    padding: 3em;
+  }
+}
+
+/* For Tablet View */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .container-data {
+    padding: 3em;
+  }
+}
+
+/* For Mobile Portrait View */
+@media only screen and (max-width: 480px) and (orientation: portrait) {
+  .container-data {
+    padding: 3em;
+  }
+}
+
+/* For Mobile Landscape View */
+@media only screen and (max-width: 640px) and (orientation: landscape) {
+  .container-data {
+    padding: 3em;
+  }
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media only screen and (max-width: 640px) {
+  .container-data {
+    padding: 3em;
+  }
+}
+
+/* For iPhone 4 Portrait or Landscape View */
+@media only screen and (min-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+  .container-data {
+    padding: 3em;
+  }
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) and (device-width: 320px) and (-webkit-min-device-pixel-ratio: 2) {
+  .container-data {
+    padding: 3em;
+  }
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 3) {
+  .container-data {
+    padding: 3em;
+  }
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
 }
