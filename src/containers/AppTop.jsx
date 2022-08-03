@@ -1,5 +1,5 @@
-import React,{useState,useEffect} from 'react';
-import { styled, alpha } from '@mui/material/styles';
+import React,{useEffect} from 'react';
+// import { styled, alpha } from '@mui/material/styles';
 import HomeIcon from '@mui/icons-material/Home';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 import { useLocation } from "react-router-dom";
@@ -8,15 +8,15 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import InputBase from '@mui/material/InputBase';
-import {Button, Link} from '@mui/material';
+// import InputBase from '@mui/material/InputBase';
+import {Button} from '@mui/material';
 import {Link as Lin} from 'react-router-dom';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import Logom from '../assets/logom.svg';
+// import Logom from '../assets/logom.svg';
 import GiftBox from '../assets/GiftBox.svg';
 import ProfilePicture1 from '../assets/ProfilePicture1.svg';
 import GiftBoxBlack from '../assets/GiftBoxBlack.svg';
@@ -31,7 +31,7 @@ import {
 
 export default function PrimarySearchAppBar({email}) {
     const navigate = useNavigate();
-    let {pathname} = useLocation();
+    // let {pathname} = useLocation();
     const [user,isLoading] = useAuthState(auth);
     
   const buttonLogoutOnClickHandler = async () => {
