@@ -69,6 +69,7 @@ export default function ComboBox() {
       sx={{ width: "30ch" }}
       size="small"
       forcePopupIcon={false}
+      clearOnBlur={false}
       // popupIcon={""}
       renderInput={(params) => <TextField {...params} size='small' sx={{backgroundColor:"white"}} placeholder="Search" type={"search"} onKeyDown={enterClicked}
          />}
