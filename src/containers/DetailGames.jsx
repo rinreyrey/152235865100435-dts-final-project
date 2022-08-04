@@ -38,9 +38,9 @@ export default function DetailGames() {
             // Tampilkan loading screen (bila ada)
             return;
           }
-          if (!user) {
-            navigate("/");
-          }
+          // if (!user) {
+          //   navigate("/");
+          // }
           
           if(err1 || err2) {
             return;
@@ -73,7 +73,7 @@ export default function DetailGames() {
             onSwiper={(swiper) => console.log(swiper)}
             navigation
           >
-            <SwiperSlide><center><img src={d1?.background_image} width="854" alt={d1?.name}></img></center></SwiperSlide>
+            <SwiperSlide><center><img src={d1?.background_image} height="480" alt={d1?.name}></img></center></SwiperSlide>
             {d2?.results.map((mv)=>{ return <SwiperSlide key={mv.id}><center><Typography variant='h6' sx={{mb:1}}>{mv.name}</Typography><video width="854" height="480" controls><source src={mv.data[480]} type="video/mp4" /></video></center></SwiperSlide>})}
           </Swiper>
           </div>

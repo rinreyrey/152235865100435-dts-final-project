@@ -38,9 +38,9 @@ export default function BrowseGames() {
             // Tampilkan loading screen (bila ada)
             return;
           }
-          if (!user) {
-            navigate("/");
-          }
+          // if (!user) {
+          //   navigate("/");
+          // }
           if(ordBy[0]===false){
           if(err1) {
             return;
