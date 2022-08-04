@@ -12,23 +12,24 @@ import {
   } from "../authentication/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import { useGetGamesQuery,useGetGamesOrderByNameQuery,
-  useGetGamesOrderByRatingQuery,
-  useGetGamesOrderByReleasedQuery } from '../services/rawgAPI';
+import { useGetGamesbySearchQuery,useGetGamesOrderByNameSearchQuery, useGetGamesOrderByRatingSearchQuery, useGetGamesOrderByReleasedSearchQuery  } from '../services/rawgAPI';
+import { useSearchParams } from 'react-router-dom';
 
-export default function Home() {
+export default function BrowseGames() {
     const navigate = useNavigate();
+    const [searchParams] = useSearchParams();
+    let query = searchParams.get('q');
     const [dataGames,setDataGames] = useState([]);
     const [page,setPage] = useState(1);
     const [ordBy,setOrdBy] = useState([false,""]);
     const [user,isLoading] = useAuthState(auth);
-    const { data:d1, error:err1, isLoading:load1 } = useGetGamesQuery(page);
-    const { data:d2, error:err2, isLoading:load2 } = useGetGamesOrderByNameQuery(page);
-    const { data:d3, error:err3, isLoading:load3 } = useGetGamesOrderByRatingQuery(page);
-    const { data:d4, error:err4, isLoading:load4 } = useGetGamesOrderByReleasedQuery(page);
+    const { data:d1, error:err1, isLoading:load1 } = useGetGamesbySearchQuery([query,page]);
+    const { data:d2, error:err2, isLoading:load2 } = useGetGamesOrderByNameSearchQuery([query,page]);
+    const { data:d3, error:err3, isLoading:load3 } = useGetGamesOrderByRatingSearchQuery([query,page]);
+    const { data:d4, error:err4, isLoading:load4 } = useGetGamesOrderByReleasedSearchQuery([query,page]);
     const handlePagination = (event, value) => {
       setPage(value);
-      navigate(`/${value}`);
+      navigate(`/games?q=${query}`);
     };
     
     useEffect(
@@ -94,7 +95,7 @@ export default function Home() {
         <>
         <PrimarySearchAppBar email={user?.email} />
         <div className='container-data'>
-        <Typography variant='h5' sx={{marginBottom:"0.5em"}}>All Games</Typography>
+        <Typography variant='h6' sx={{marginBottom:"1em"}}>{d1?.count} results found for "{query}"</Typography>
         <SelectOrder handleOrder={setOrdBy}/>
         <Grid container alignItems="center"
   justifyContent="center" columnSpacing={{ sm: 6, xs:0 }} rowSpacing={{xs:2}}>

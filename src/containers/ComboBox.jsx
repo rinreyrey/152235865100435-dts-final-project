@@ -18,7 +18,7 @@ export default function ComboBox() {
   const { data, error, isLoading } = useGetGamesbySearch5Query(comboBoxval);
   const enterClicked = (event,value) => {
     if(event.key === "Enter"){
-      navigate(`/browse?q=${comboBoxval}`);
+      navigate(`/games?q=${comboBoxval}`);
     }
   }
   const handleAutoComplete = (event,value)=>{
@@ -26,7 +26,7 @@ export default function ComboBox() {
     navigate(`/games/${value.id}`);
   }
   const handleButtonSearch = ()=>{
-    navigate(`/browse?q=${comboBoxval}`);
+    navigate(`/games?q=${comboBoxval}`);
   }
   
   useEffect(

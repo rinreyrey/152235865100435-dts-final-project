@@ -9,7 +9,8 @@ import reportWebVitals from './reportWebVitals';
 import SignInSide from "./containers/SignIn";
 import SignUp from "./containers/SignUp";
 import ForgotPassword from './containers/ForgotPassword';
-// import ProfilePage from './containers/ProfilePage';
+import BrowseGames from './containers/BrowseGames';
+import DetailGames from './containers/DetailGames';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,10 +21,11 @@ root.render(
           <Route path="/login" element={<SignInSide />} />
           <Route path="/register" element={<SignUp />} />
           <Route path="/forgot" element={<ForgotPassword />} />
-          <Route path="/games/:id" element={<App />} />
-          <Route path="/" element={<App />} />
-          <Route path="/:page" element={<App />} />
-          <Route path="/browse" element={<App />} />
+          <Route path="/" element={<App />} >
+            <Route path=":page" element={<App />} />
+          </Route>
+          <Route path="/games" element={<BrowseGames />} />
+          <Route path="/games/:id" element={<DetailGames />} />
           <Route
             path="*"
             element={

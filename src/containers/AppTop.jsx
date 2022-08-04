@@ -1,8 +1,9 @@
 import React,{useEffect} from 'react';
 // import { styled, alpha } from '@mui/material/styles';
-import HomeIcon from '@mui/icons-material/Home';
-import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+// import HomeIcon from '@mui/icons-material/Home';
+// import ManageSearchIcon from '@mui/icons-material/ManageSearch';
 // import { useLocation } from "react-router-dom";
+import GamesIcon from '@mui/icons-material/Games';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -173,11 +174,11 @@ export default function PrimarySearchAppBar({email}) {
             aria-label="open drawer"
             sx={{ mr: 2 }}
           >
-            <Lin to={'/'} style={{textDecoration:"none"}}><Typography variant='h5' style={{color:"white"}}>GAMES</Typography></Lin>
+            <Lin to={'/'} style={{textDecoration:"none"}} className="iconhome"><GamesIcon /><Typography variant='h6' style={{color:"white"}}>GAMES</Typography></Lin>
           </IconButton>
           <Box sx={{ flexGrow: 1 }} id="navlink">
-            <Lin to='/' className='navlink-item'><HomeIcon />Home</Lin>
-            <Lin to='/browse' className='navlink-item'><ManageSearchIcon />Browse</Lin>
+            {/* <Lin to='/' className='navlink-item'><HomeIcon />Home</Lin> */}
+            {/* <Lin to='/games' className='navlink-item'><ManageSearchIcon />Browse</Lin> */}
           </Box>
           <ComboBox />
           

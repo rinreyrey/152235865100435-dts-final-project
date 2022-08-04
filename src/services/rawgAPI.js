@@ -48,7 +48,7 @@ export const rawgAPI = createApi({
             // Berupa fungsi yah yang mengembalikan string apa yang ditempelkan ke baseUrl
 
             // ini artinya baseUrl + /colors => https://reqres.in/api/colors
-            query: (query) => `/games?key=380888a8233e4763960774aa96433679&search=${query}`,
+            query: (query) => `/games?key=380888a8233e4763960774aa96433679&search=${query[0]}&page_size=10&page=${query[1]}`,
         }),
 
         getGamesbySearch5: builder.query({
@@ -81,6 +81,29 @@ export const rawgAPI = createApi({
 
             // ini artinya baseUrl + /colors => https://reqres.in/api/colors
             query: (page) => `/games?key=380888a8233e4763960774aa96433679&ordering=-rating&page_size=10&page=${page}`,
+        }),
+        getGamesOrderByNameSearch: builder.query({
+            // di sini kita definisikan querynya mau seperti apa
+            // Berupa fungsi yah yang mengembalikan string apa yang ditempelkan ke baseUrl
+
+            // ini artinya baseUrl + /colors => https://reqres.in/api/colors
+            query: (query) => `/games?key=380888a8233e4763960774aa96433679&ordering=name&search=${query[0]}&page_size=10&page=${query[1]}`,
+        }),
+
+        // GET /colors/:id <--- di sini kita akan meminta parameter di dalam endpointnya dengan nama "id"
+        // Karena GET, kita masih menggunakan builder.query
+        getGamesOrderByReleasedSearch: builder.query({
+            // Sekarang karena kita meminta ada parameter id, kita berikan di dalam fungsi query nya
+            // suatu parameter id juga
+            query: (query) => `/games?key=380888a8233e4763960774aa96433679&ordering=-released&search=${query[0]}&page_size=10&page=${query[1]}`,
+        }),
+
+        getGamesOrderByRatingSearch: builder.query({
+            // di sini kita definisikan querynya mau seperti apa
+            // Berupa fungsi yah yang mengembalikan string apa yang ditempelkan ke baseUrl
+
+            // ini artinya baseUrl + /colors => https://reqres.in/api/colors
+            query: (query) => `/games?key=380888a8233e4763960774aa96433679&ordering=-rating&search=${query[0]}&page_size=10&page=${query[1]}`,
         }),
         getGameTrailer: builder.query({
             // di sini kita definisikan querynya mau seperti apa
@@ -115,5 +138,8 @@ export const {
     useGetGamesOrderByRatingQuery,
     useGetGamesOrderByReleasedQuery,
     useGetGamesbySearchQuery,
-    useGetGamesbySearch5Query
+    useGetGamesbySearch5Query,
+    useGetGamesOrderByNameSearchQuery,
+    useGetGamesOrderByRatingSearchQuery,
+    useGetGamesOrderByReleasedSearchQuery
 } = rawgAPI;

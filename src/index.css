@@ -184,3 +184,30 @@ code {
   justify-content: center;
   max-width: 100%;
 }
+
+.iconhome {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.5em;
+}
+
+.hovercheck:hover {
+  position: relative;
+  z-index: 1;
+}
+
+.hovercheck:hover .hovercheck2 {
+  position: absolute;
+  z-index: 5;
+  top: -178px;
+}
+
+.hovercheck:hover .genrenya {
+  display: block !important;
+}
